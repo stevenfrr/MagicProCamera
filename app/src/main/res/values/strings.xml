@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MagicProCamera</string>
+    <string name="camera_permission_denied">Permission caméra refusée</string>
+    <string name="photo_saved">Photo sauvegardée</string>
+    <string name="error_title">Erreur</string>
+    <string name="ok">OK</string>
+</resources>
