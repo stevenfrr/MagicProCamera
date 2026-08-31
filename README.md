@@ -1,15 +1,16 @@
-# Magic Pro Camera
+# Magic Pro Camera AI V3
+Application Android native avec aperçu CameraX plein écran, capture JPEG, découverte dynamique Camera2 et conseils photo locaux.
 
-Android camera app prototype focused on manual Camera2 controls: ISO, shutter speed, white balance, exposure compensation, AF/manual focus, lens selection, grid and JPEG/RAW toggle UI.
+## Fonctions réellement incluses
+- aperçu caméra arrière et capture JPEG vers `Pictures/MagicProCamera`;
+- permission caméra et détection ISO, vitesse, EV, focus manuel, RAW et objectifs disponibles;
+- analyse locale et limitée en fréquence : luminosité, nuit/faible lumière, forte lumière et mouvement; aucun pixel n'est envoyé sur Internet;
+- recommandations ISO, vitesse, EV et Kelvin bornées par les limites Camera2 détectées;
+- IA AUTO, assistant hors ligne (lune/étoiles, action/chien, coucher de soleil) et persistance de son état;
+- architecture `camera/`, `ai/scenerecognition/`, `ai/recommendation/`, `ai/enhancement/`, `presets/`, `settings/`.
+
+## Limites transparentes
+Aucun modèle de vision n'est embarqué : chien, chat, personne, nourriture et voiture ne sont donc pas reconnus visuellement. La capacité RAW est signalée mais la capture DNG n'est pas encore implémentée. Les recommandations sont affichées et limitées au matériel, mais les commandes manuelles complètes Camera2, l'histogramme, la grille et AE/AF Lock restent à relier aux requêtes de capture; elles ne sont pas annoncées comme appliquées.
 
 ## Build
-Open the project in Android Studio (Ladybug or newer), let Gradle sync, then Run on the Honor Magic8 Pro.
-
-## Important
-Camera2 exposes only the manual controls that the phone's camera HAL actually supports. Some Honor camera modules may restrict RAW, manual focus, shutter speeds or specific lenses to certain camera IDs. The app detects capabilities at runtime and falls back safely.
-
-
-## Presets V2
-The app now includes presets for full sun, cloudy weather, sunrise, golden hour, blue hour, twilight, night, starry sky, indoor, artificial light, portrait and action. The “Auto intelligent” button selects a starting preset from the current local time. All preset values remain editable manually after selection.
-
-Note: the preset is a starting point based on time of day, not a replacement for a light meter; actual exposure should be checked on the live preview.
+Le workflow GitHub Actions télécharge Gradle 8.10.2 et produit `app/build/outputs/apk/debug/app-debug.apk`.
