@@ -1,5 +1,6 @@
 package com.magicprocamera
 import android.Manifest
+import android.app.AlertDialog
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.os.Bundle
